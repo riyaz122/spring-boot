@@ -1,3 +1,5 @@
+---
+kind: service
 apiVersion: v1
 kind: Pod
 metadata:
@@ -9,4 +11,5 @@ spec:
     - name: nodeapp
       image: riyaz1223/helloworld
       ports:
-        - containerPort: 8088
+        - containerPort: 80
+...        
