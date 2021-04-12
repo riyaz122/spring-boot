@@ -1,15 +1,25 @@
 ---
-kind: service
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: nodeapp
-  labels:
-    app: nodeapp
+  name: hello-world
 spec:
-  containers:
-    - name: nodeapp
-      image: riyaz1223/helloworld
-      ports:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: hello-world-app
+      version: blue
+  template:
+    metadata:
+      name: hello-world-pod
+      labels:
+        app: hello-world-app
+        version: blue
+    spec:
+      containers:
+      - name: hello-world-container
+        image: riyaz1223/helloworld:latest
+        imagePullPolicy: Always
+        ports:
         - containerPort: 80
-...        
+---
