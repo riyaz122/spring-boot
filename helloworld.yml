@@ -23,8 +23,8 @@ spec:
         app: springboot
     spec:
       containers:
-      - image: dockerhandson/spring-boot-mongo
-        name: springboot
+      - image: riyaz1223/helloworld
+        name: helloworld
         ports:
         - containerPort: 8080  
         env:
