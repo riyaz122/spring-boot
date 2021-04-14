@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,3 +14,4 @@ spec:
         - name: web
           containerPort: 80
           protocol: TCP
+...
