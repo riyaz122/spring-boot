@@ -1,25 +1,15 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: static-web
+  labels:
+    role: myrole
 spec:
-  replicas: 5
-  selector:
-    matchLabels:
-      app: hello-world-app
-      version: blue
-  template:
-    metadata:
-      name: hello-world-pod
-      labels:
-        app: hello-world-app
-        version: blue
-    spec:
-      containers:
-      - name: hello-world-container
-        image: riyaz1223/helloworld:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
----
+  containers:
+    - name: helloworld container
+      image: riyaz1223/helloworld:latest
+      imagepullpolicy: Always
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
