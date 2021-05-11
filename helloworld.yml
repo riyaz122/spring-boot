@@ -1,15 +1,20 @@
-kind: Deployment
+--- 
 apiVersion: apps/v1
-metadata:
-  name: static-web
-  labels:
+kind: Deployment
+metadata: 
+  labels: 
     role: myrole
-spec:
-  containers:
-    - name: helloworld container
-      image: riyaz1223/helloworld:latest
-      imagepullpolicy: Always
-      ports:
-        - name: web
-          containerPort: 80
-          protocol: TCP
+  name: static-web
+spec: 
+  selector: 
+    containers: 
+      - 
+        image: "riyaz1223/helloworld:latest"
+        imagepullpolicy: Always
+        name: "helloworld container"
+        ports: 
+          - 
+            containerPort: 80
+            name: web
+            protocol: TCP
+
