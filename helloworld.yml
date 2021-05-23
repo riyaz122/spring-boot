@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: "riyaz1223/helloworld:latest"
+        image: "riyaz1223/helloworld"
         ports:
         - containerPort: 80
           name: web
