@@ -1,4 +1,4 @@
-FROM openjdk:8-alpine
+FROM hello-world
 
 # Required for starting application up.
 RUN apk update && apk add /bin/sh
